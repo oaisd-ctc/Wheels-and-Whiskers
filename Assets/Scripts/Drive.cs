@@ -19,17 +19,27 @@ public class Drive : MonoBehaviour
     public Vector3 velocity;
     public float spinRate;
     public int rightOrLeft;
+    public float gripRate;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        isMoving = false;
     }
 
     // Update is called once per frame
     // i should know that by know, unity.
     void Update()
     {
+        //  is the car moving?
+        if(velocity != Vector3.zero)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
         // calculate the direction the car is facing and the direction
         // it's moving so i can compare them.
         facing = rb.rotation * Vector3.forward;
@@ -61,13 +71,15 @@ public class Drive : MonoBehaviour
         throttleBrakeInput = Input.GetAxis("Vertical");
         // remember to actually call the functions.
         Turn(turnInput);
-        Accelerate(turnInput);
-    }
+        Accelerate(throttleBrakeInput);
 
+    }
+    
     public void Turn(float input)
     {
         // turn.
         transform.Rotate(0, input * turnSpeed * Time.deltaTime, 0);
+        rb.AddRelativeForce(Vector3.right * Time.deltaTime * input * (turnSpeed * gripRate) * -rightOrLeft);
     }
 
     public void Accelerate(float input)
@@ -80,12 +92,12 @@ public class Drive : MonoBehaviour
         //
         // *when drifing
         float spin = Mathf.Pow(spinRate, Time.deltaTime);
-        if(!isSliding)
+        if(true)
         {
             //drive how you'd expect under normal conditions.
-            transform.Translate(Vector3.forward * enginePower * Time.deltaTime);
+            rb.AddRelativeForce(Vector3.forward * enginePower * Time.deltaTime * input); 
         }
-        if(isSliding)
+        else if(isSliding)
         {
             transform.Translate(velocity * (enginePower / 2) * Time.deltaTime);
             transform.Rotate(0, spin * rightOrLeft, 0);
