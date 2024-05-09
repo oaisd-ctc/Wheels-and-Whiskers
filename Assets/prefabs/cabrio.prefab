@@ -838,7 +838,7 @@ Transform:
   m_GameObject: {fileID: 5967236090681823897}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.797, y: 0.216, z: -29.537}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -865,14 +865,15 @@ MonoBehaviour:
   isSliding: 0
   turnInput: 0
   throttleBrakeInput: 0
-  turnSpeed: 1
-  enginePower: 1
+  turnSpeed: 150
+  enginePower: 1000
   isMoving: 0
   rearAxle: {fileID: 2615437671656583104}
   facing: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   spinRate: 1
   rightOrLeft: 0
+  gripRate: 0
 --- !u!65 &4887427356291725308
 BoxCollider:
   m_ObjectHideFlags: 0

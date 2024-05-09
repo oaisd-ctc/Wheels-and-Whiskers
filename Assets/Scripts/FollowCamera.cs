@@ -17,20 +17,24 @@ public class FollowCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cam.transform.position = car.transform.position + new Vector3(0, 3, 0);
-        Quaternion left = Quaternion.Euler(car.transform.rotation.x, car.transform.rotation.y - 45, car.transform.rotation.z);
-        Quaternion right = Quaternion.Euler(car.transform.rotation.x, car.transform.rotation.y + 45, car.transform.rotation.z);
-        // if (Input.GetAxis("Horizontal") == 0)
-        // {
+        if (car != null)
+        {
+            cam.transform.position = car.transform.position + new Vector3(0, 3, 0);
+            Quaternion left = Quaternion.Euler(car.transform.rotation.x, car.transform.rotation.y - 45, car.transform.rotation.z);
+            Quaternion right = Quaternion.Euler(car.transform.rotation.x, car.transform.rotation.y + 45, car.transform.rotation.z);
+            // if (Input.GetAxis("Horizontal") == 0)
+            // {
             cam.transform.rotation = car.transform.rotation;
-        // }
-        // else if (Input.GetAxis("Horizontal") > 0)
-        // {
-        //     cam.transform.rotation = right;
-        // }
-        // else if (Input.GetAxis("Horizontal") < 0)
-        // {
-        //     cam.transform.rotation = left;
-        // }
+            // }
+            // else if (Input.GetAxis("Horizontal") > 0)
+            // {
+            //     cam.transform.rotation = right;
+            // }
+            // else if (Input.GetAxis("Horizontal") < 0)
+            // {
+            //     cam.transform.rotation = left;
+            // }
+        }
+
     }
 }

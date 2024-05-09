@@ -97,6 +97,7 @@ public class Drive : MonoBehaviour
             //drive how you'd expect under normal conditions.
             rb.AddRelativeForce(Vector3.forward * enginePower * Time.deltaTime * input); 
         }
+        // i may never add this funtionality :(
         else if(isSliding)
         {
             transform.Translate(velocity * (enginePower / 2) * Time.deltaTime);
