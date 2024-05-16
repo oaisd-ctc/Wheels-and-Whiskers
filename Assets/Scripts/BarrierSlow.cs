@@ -22,7 +22,7 @@ public class BarrierSlow : MonoBehaviour
     {
         Debug.Log("Collided!");
         float slow = slowRate * Time.deltaTime;
-        Vector3 sloow = new Vector3(slow, slow, slow);
-        other.gameObject.GetComponent<Rigidbody>().velocity -= sloow;
+        // Vector3 sloow = new Vector3(slow, slow, slow); 
+        other.gameObject.GetComponent<Rigidbody>().velocity /= slow;
     }
 }

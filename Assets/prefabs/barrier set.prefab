@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  slowRate: 50
+  slowRate: 75
 --- !u!4 &2786742485053693537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 459226, guid: 17456ec2e5be2064397df935c87bc9e9, type: 3}
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1783511155084758685, guid: 37ff28df153beb043b91645aee15bb33, type: 3}
-  slowRate: 50
+  slowRate: 75
 --- !u!4 &2878479325265271978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 459226, guid: 17456ec2e5be2064397df935c87bc9e9, type: 3}
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  slowRate: 50
+  slowRate: 75
 --- !u!4 &4976126010698005832 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 440284, guid: 8f28b0369af3a5d4bb1e7e9293b809d7, type: 3}
@@ -466,4 +466,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  slowRate: 50
+  slowRate: 75
