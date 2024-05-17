@@ -19,6 +19,7 @@ public class StartLine : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        script.isGoing = true;
         script.ResetTime();
     }
 }

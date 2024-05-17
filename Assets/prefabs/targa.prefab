@@ -722,6 +722,7 @@ MonoBehaviour:
   spinRate: 1
   rightOrLeft: 0
   gripRate: 5
+  brakePower: 0.75
 --- !u!54 &4059776848965298494
 Rigidbody:
   m_ObjectHideFlags: 0

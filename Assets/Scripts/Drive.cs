@@ -20,6 +20,7 @@ public class Drive : MonoBehaviour
     public float spinRate;
     public int rightOrLeft;
     public float gripRate;
+    public float brakePower;
 
     // Start is called before the first frame update
     void Start()
@@ -72,7 +73,10 @@ public class Drive : MonoBehaviour
         // remember to actually call the functions.
         Turn(turnInput);
         Accelerate(throttleBrakeInput);
-
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(Brake());
+        }
     }
     
     public void Turn(float input)
@@ -102,6 +106,17 @@ public class Drive : MonoBehaviour
         {
             transform.Translate(velocity * (enginePower / 2) * Time.deltaTime);
             transform.Rotate(0, spin * rightOrLeft, 0);
+        }
+    }
+    public IEnumerator Brake()
+    {
+        while (Input.GetKey(KeyCode.Space))
+        {
+            if (rb.velocity.magnitude > 0)
+            {
+                rb.velocity *= brakePower;
+            }
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }

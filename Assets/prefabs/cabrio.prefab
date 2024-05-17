@@ -874,6 +874,7 @@ MonoBehaviour:
   spinRate: 1
   rightOrLeft: 0
   gripRate: 0
+  brakePower: 0.75
 --- !u!65 &4887427356291725308
 BoxCollider:
   m_ObjectHideFlags: 0

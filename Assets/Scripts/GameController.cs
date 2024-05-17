@@ -13,11 +13,13 @@ public class GameController : MonoBehaviour
     public Button hatchButton;
     public Button targaButton;
     public GameObject spawner;
+    public Button instructButton;
+    public GameObject instructionsScreen;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        instructionsScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -60,5 +62,15 @@ public class GameController : MonoBehaviour
         currentCar = instantiatedCar;
         cam.car = currentCar;
         menu.SetActive(false);
+    }
+    public void OpenInstructionsScreen()
+    {
+        instructionsScreen.SetActive(true);
+        menu.SetActive(false);
+    }
+    public void CloseInstructionsScreen()
+    {
+        instructionsScreen.SetActive(false);
+        menu.SetActive(true);
     }
 }
