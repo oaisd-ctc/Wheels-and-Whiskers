@@ -26,7 +26,6 @@ public class Timer : MonoBehaviour
     {
         if (isGoing)
         {
-            timer.text = "time: " + minutesString + ":" + secondsString;
             seconds += Time.deltaTime;
             if ((int)seconds == 59)
             {
@@ -35,11 +34,12 @@ public class Timer : MonoBehaviour
             }
             secondsString = seconds.ToString("00");
             secondsString = seconds.ToString("00");
+            timer.text = "time: " + minutesString + ":" + secondsString;
         }
     }
     public void ResetTime()
     {
-        if ((minutes * 60) + seconds >= prevBestInt )
+        if ((minutes * 60) + seconds <= prevBestInt || prevBestInt == 0)
         {
             prevBestInt = (minutes * 60) + Mathf.RoundToInt(seconds);
             prevBest.text = "best: " + minutesString + ":" + secondsString;
